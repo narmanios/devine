@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beyong the Divine</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <!-- <link rel="stylesheet" href="./styles/global.css" /> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- hero section -->
+    <section class="billboard orangered-bg no-padding-right">
+        <div class="container">
+            <h2>IE Gonzalez</h2>
+            <h1>BEYOND THE DIVINE</h1>
+        </div>
+        <figure class="media">
+
+            <img class="lion" src="images/lion.png" alt="" />
+            <!-- <img class="skin" src="images/skin.png" alt="" /> -->
+
+            <!-- <img class="mouth" src="images/mouth.png" alt="" /> -->
+            <!-- <img class="ear" src="images/ear.png" alt="" /> -->
+            <img class="eyes" src="images/eyes-color.png" alt="" />
+            <!-- <img class="rectangle" src="images/rectangle.png" alt="" /> -->
+            <img class="circle" src="images/circle.png" alt="" />
+
+        </figure>
+    </section>
+
+    <div class="thank-you">
+        <section class="Intro">
+            <!-- <h1>Beyond the Divine</h1> -->
+            <h3>Abstract Reality, Time and the Logic of Change<br>
+                IE González</h3><br>
+            <h2>In appreciation to the “teal lion”, that inner voice always searching to make a dent in the
+                universe. These original teal lion reflections are dedicated to my wife Marina and my four boys,
+                Javier,
+                Daniel,
+                Gabriel and Alejandro, for giving me happiness in this life and the opportunity to live beyond it.
+            </h2>
+    </div>
+    </div>
+    </section>
+
+
+    </div>
+    <div class="group">
+        <div class="questions">
+            <h2>On the Universe</h2>
+
+            <p>Select a topic on the subject of the Universe to find out what IE Gonzalez wants you to discover and
+                understand. </p>
+            <!-- <label for="topic-appendix">Which topic are you interested in?</label> -->
+            <select id="topic-appendix" name="dropdown">
+                <option value="logic">Logic</option>
+                <option value="physics">Physics</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="biology">Biology</option>
+                <option value="culture">Culture</option>
+
+
+            </select>
+
+            <!-- Button -->
+            <button id="get-appendix">Ask IE Gonzalez</button>
+        </div>
+        <!-- Output -->
+        <div id="output-appendix" class="gpt-response"></div>
+
+
+        <div class="questions">
+            <h2>On Virtual Reality</h2>
+            <p>Enter a topic or question you want to ask on Virtual Reality to have IE Gonzalez' share his perspective.
+            </p>
+            <input id="topic-reality" type="text" placeholder="Enter a topic" />
+            <!-- <div id="output-reality" ></div> -->
+            <button id="get-reality">Ask IE Gonzalez</button>
+        </div>
+        <div id="output-reality" class="gpt-response"></div>
+
+        <div class="questions">
+            <h2>Interview IE Gonzalez</h2>
+            <p>Enter a topic to create a virtual interview with IE Gonzalez. </p>
+            <input id="topic-interview" type="text" placeholder="Enter a topic" />
+            <!-- <div id="output-interview"></div> -->
+            <button id="get-interview">Start an Interview</button>
+        </div>
+        <div id="output-interview" class="gpt-response"></div>
+    </div>
+    <!-- <div id="cards" class="flex flex-wrap"></div>
+        <script src="main.js"></script> -->
+    </div>
+
+
+
+    <script>
+        // ?
+        const getAppendixButton = document.querySelector("#get-appendix");
+
+        // ?
+        getAppendixButton.addEventListener("click", async () => {
+            // ?
+            document.querySelector("#output-appendix").textContent = "loading...";
+
+            // ?
+            const topic = document.querySelector("#topic-appendix").value;
+
+            // ?
+            const response = await fetch(`/api/appendix?topic=${topic}`);
+            const joke = await response.text();
+
+            // ?
+            document.querySelector("#output-appendix").textContent = joke;
+        });
+    </script>
+    <script>
+        // ?
+        const getRealityButton = document.querySelector("#get-reality");
+
+        // ?
+        getRealityButton.addEventListener("click", async () => {
+            // ?
+            document.querySelector("#output-reality").textContent = "loading...";
+
+            // ?
+            const topic = document.querySelector("#topic-reality").value;
+
+            // ?
+            const response = await fetch(`/api/reality?topic=${topic}`);
+            const joke = await response.text();
+
+            // ?
+            document.querySelector("#output-reality").textContent = joke;
+        });
+    </script>
+    <script>
+        // ?
+        const getInterviewButton = document.querySelector("#get-interview");
+
+        // ?
+        getInterviewButton.addEventListener("click", async () => {
+            // ?
+            document.querySelector("#output-interview").textContent = "loading...";
+
+            // ?
+            const topic = document.querySelector("#topic-interview").value;
+
+            // ?
+            const response = await fetch(`/api/interview?topic=${topic}`);
+            const joke = await response.text();
+
+            // ?
+            document.querySelector("#output-interview").textContent = joke;
+        });
+    </script>
+
+
+
+</body>
+
+</html>

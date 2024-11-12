@@ -1,0 +1,18 @@
+@import 'variables';
+@import 'mixins';
+
+footer {
+	background: $black;
+	color: $white;
+	padding: clamp(4px, 0.4vw, 0.6vw);
+	padding-left: 7vw;
+	p {
+		font-size: clamp(0.7em, 0.6vw, 1vw);
+		margin: 0;
+	}
+}
+
+.tooltip {
+	left: 0;
+	bottom: 0;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello, Web!</title>
+</head>
+
+<body>
+    <h1>Color</h1>
+    <p>This page makes a request to an api route and displays a random hex color.</p>
+    <button id="send">send</button>
+    <div id="response"></div>
+    <script>
+        const sendElement = document.getElementById("send");
+        sendElement.addEventListener("click", () => {
+            fetch(`/api/color`)
+                .then((response) => response.text())
+                .then((responseText) => {
+                    const responseElement = document.getElementById("response");
+                    responseElement.innerText = responseText;
+                });
+        });
+
+
+    </script>
+</body>
+
+</html>

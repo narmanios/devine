@@ -1,0 +1,111 @@
+body {
+  background-color: #000;
+  font-family: "Roboto Mono", monospace;
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  margin: auto;
+}
+
+.text-bg {
+  position: relative;
+  height: 100vh;
+  color: white;
+}
+
+.text-bg::before {
+  content: "Mind";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 700px;
+  color: rgba(255, 255, 255, 0.1);
+  z-index: 2;
+}
+
+/* .text-bg-two {
+  position: relative;
+  height: 100vh;
+  color: white;
+}
+.text-bg-two::before {
+  content: "Mind";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 600px;
+  color: rgba(194, 235, 82, 0.2);
+  z-index: -1;
+} */
+
+#header-image {
+  position: relative;
+  z-index: 1;
+}
+
+#header-image img {
+  display: block;
+  margin: auto;
+  width: 800px;
+}
+
+a {
+  color: rgb(255, 255, 255);
+}
+
+/* General styles for the section */
+.billboard {
+  background-color: orangered;
+  padding-right: 0;
+  position: relative;
+}
+
+.container {
+  padding: 20px;
+  color: white;
+}
+
+.media {
+  position: relative; /* Enables child absolute positioning */
+  width: 100%;
+  height: 400px; /* Adjust height to fit the content */
+}
+
+/* Style each image */
+.media img {
+  position: absolute; /* Allows layering and precise placement */
+  height: auto; /* Default to maintain aspect ratio */
+}
+
+/* Individual positions, sizes, and z-index for layering */
+.skin {
+  top: 100;
+  left: 800;
+  width: 150px; /* Specific size for this image */
+  z-index: 1;
+}
+
+.eyes {
+  top: 50px;
+  left: 150px;
+  width: 600px; /* Different size for this image */
+  z-index: 2;
+}
+
+.mouth {
+  top: 100px;
+  left: 500px;
+  width: 400px; /* Specific size for this image */
+  height: 200px; /* Optionally, override height */
+  z-index: 3;
+}
+
+.ear {
+  top: 150px;
+  left: 650px;
+  width: 500px; /* Larger size for this image */
+  z-index: 1;
+}
+
+

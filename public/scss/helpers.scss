@@ -1,0 +1,147 @@
+@import 'variables';
+@import 'mixins';
+
+// backgrounds
+.seagreen-bg {
+  background: $primary-bg;
+  color: $white;
+  aside {
+    a {
+      color: $white;
+    }
+  }
+}
+
+.orangered-bg {
+  background: $secondary-bg;
+  color: $white;
+  aside {
+    a {
+      color: $white;
+    }
+  }
+}
+
+.coffee-bg {
+  background: $tertiary-bg;
+  color: $white;
+  aside {
+    a {
+      color: $white;
+    }
+  }
+}
+
+.snow-bg {
+  background: $light-bg;
+  color: $black;
+  aside {
+    color: $black;
+    &::before {
+      background: $black;
+    }
+    a {
+      color: $black;
+    }
+  }
+}
+
+// flex box scenarios
+
+// change flex order for metadata
+.change-flex-order {
+  .container {
+    order: 1;
+  }
+}
+
+// flexbox vertical and horizontal alignments
+.align-center {
+  align-items: center;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+
+
+// section tag height combinations
+.section-height-small {
+  height: 60vh;
+  min-height: 640px;
+}
+
+.section-height-medium {
+  height: 72vh;
+  min-height: 640px;
+}
+
+.section-height-large {
+  height: 80vh;
+  min-height: 640px;
+}
+
+.section-height-full {
+  height: 100%;
+  min-height: 640px;
+}
+
+
+
+
+// remove padding for sections
+.no-padding-all {
+  padding: 0;
+}
+
+.no-padding-right {
+  padding-right: 0;
+}
+
+.no-padding-left {
+  padding-left: 0;
+}
+
+.no-padding-top {
+  padding-top: 0;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0;
+}
+
+
+
+// chart grids
+.grid-overlap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+
+  .charts {
+    grid-column: 1 / span 2;
+    grid-row: 1 / -1;
+    width: auto;
+    position: relative;
+    z-index: 40;
+    padding-bottom: $space-giant;
+  }
+  figure {
+    grid-column: 2 / span 3;
+    grid-row: 1 / -1;
+  }
+
+}

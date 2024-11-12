@@ -1,0 +1,142 @@
+@import 'variables';
+@import 'mixins';
+
+.section {
+	display: flex;
+	padding: 8vh 7vw;
+	gap: $space-grande;
+	position: relative;
+
+	.container {
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+
+		&.chart {
+			width: 100%;
+			margin-top: $space-large;
+			padding-bottom: $space-grande;
+		}
+
+		h2 {
+			span {
+				display: flex;
+				font-size: $font-grande;
+			}
+		}
+
+		h3 {
+			font-family: $sans-serif;
+			font-size: clamp(1.4rem, 3vw, 5vw);
+			margin-bottom: $space-large;
+			span {
+				font-size: clamp(1.4rem, 4vw, 6vw);
+			}
+		}
+
+		&.video {
+			width: 100%;
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr;
+
+			video, .video-overlay {
+				grid-row: 1 / -1;
+				grid-column: 1 / -1;
+			}
+
+			.video-overlay {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background: linear-gradient($transparent, $black-opacity-60);
+				padding: $space-grande;
+
+				p {
+					font-size: clamp(1.8vw, 4vw, 8rem);
+					text-align: center;
+					color: $white;
+					font-weight: $fw-semi-bold;
+					text-shadow: 1px 1px 0 $black;
+				}
+			}
+		}
+	}
+
+	// image 
+	figure {
+		width: 50%;
+		img {
+			@include image-size(100%, auto);
+		}
+				&.cover {
+					display: flex;
+					align-items: flex-end;
+					width: 100%;
+					img {
+						@include image-size(100%, 100%);
+						object-fit: cover;
+					}
+				}
+	}
+
+	&.grid-5c {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: min-content 1fr;
+		// height: 80vh;
+
+		.container {
+			&.justify-center {
+				grid-column: 1 / span 3;
+				grid-row: 1 / span 1;
+				width: 100%;
+				position: relative;
+				z-index: 20;
+			}
+		}
+
+		figure {
+			grid-column: 1 / -1;
+			grid-row: 2 / -1;
+			width: 100%;
+
+			img {
+				@include image-size(100%, auto);
+			}
+		&.with-grid {
+			grid-column: 2 / -1;
+			grid-row: 1 / -1;
+			display: flex;
+			justify-content: flex-end;
+			img {
+				@include image-size(auto, 100%);
+			}
+		}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.section {
+		flex-direction: column;
+		padding: $space-large;
+		height: auto;
+
+		.container {
+			width: 100%;
+		}
+		figure {
+			width: 88%;
+		}
+		.container {
+			order: 1;
+		}
+		figure {
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}

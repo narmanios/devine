@@ -1,0 +1,99 @@
+@import 'variables';
+@import 'mixins';
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  outline: none;
+  font-family: $sans-serif;
+  letter-spacing: -0.05em;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+img, picture, video {
+  display: block;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $serif;
+  line-height: 96%;
+  font-weight: 600;
+}
+h1 {
+  // font-size: clamp(2rem, 8vw, 10vw);
+  font-size: $title-size;
+}
+h2 {
+  // font-size: clamp(1.6rem, 6vw, 8vw);
+  font-size: calc($title-size * 0.8);
+  margin-bottom: $space-large;
+}
+
+h3 {
+  font-size: clamp(1.4rem, 4vw, 6vw);
+}
+
+p {
+  font-size: clamp(1.4rem, 2vw, 4vw);
+  font-size: calc($title-size * 0.25);
+  line-height: 120%;
+  font-weight: 300;
+  margin-bottom: $space-large;
+}
+
+.label {
+  font-size: clamp(1.4rem, 2vw, 4vw);
+  line-height: 100%;
+  display: flex;
+}
+
+aside {
+  font-size: clamp(1rem, 1.4vw, 1.6vw);
+  opacity: $layer-opacity-60;
+  transition: opacity 0.4s ease-out;
+  position: relative;
+  align-self: flex-start;
+  cursor: pointer;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: $space-none;
+    height: $space-xxsmall;
+    width: 0%;
+    background: $white;
+    transition: width 0.8s ease-out;
+  }
+
+  &:hover {
+    opacity: 1;
+    &::before {
+      width: 100%;
+      opacity: 1;
+      transition: width 0.8s ease-out;
+    }
+  }
+
+
+}
+
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+}
+
+
+
+
+
+

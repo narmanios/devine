@@ -1,0 +1,71 @@
+<!-- public/joke.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joke</title>
+</head>
+
+<body>
+    <div class="questions">
+        <h2>Life</h2>
+        <input id="topic-artist" type="text" placeholder="Enter topic" />
+        <div id="output-artist"></div>
+        <button id="get-artist">Get Artists</button>
+    </div>
+    <div class="questions">
+        <h2>Universe</h2>
+        <input id="topic-festival" type="text" placeholder="Enter topic" />
+        <div id="output-festival"></div>
+        <button id="get-festival">Get Festival</button>
+    </div>
+
+
+
+    <script>
+        // ?
+        const getArtistButton = document.querySelector("#get-artist");
+
+        // ?
+        getArtistButton.addEventListener("click", async () => {
+            // ?
+            document.querySelector("#output-artist").textContent = "loading...";
+
+            // ?
+            const topic = document.querySelector("#topic-artist").value;
+
+            // ?
+            const response = await fetch(`/api/artist?topic=${topic}`);
+            const joke = await response.text();
+
+            // ?
+            document.querySelector("#output-artist").textContent = joke;
+        });
+    </script>
+    <script>
+        // ?
+        const getFestivalButton = document.querySelector("#get-festival");
+
+        // ?
+        getFestivalButton.addEventListener("click", async () => {
+            // ?
+            document.querySelector("#output-festival").textContent = "loading...";
+
+            // ?
+            const topic = document.querySelector("#topic-festival").value;
+
+            // ?
+            const response = await fetch(`/api/festival?topic=${topic}`);
+            const joke = await response.text();
+
+            // ?
+            document.querySelector("#output-festival").textContent = joke;
+        });
+    </script>
+
+</body>
+
+</html>
