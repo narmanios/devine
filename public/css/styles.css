@@ -208,7 +208,7 @@ input:focus {
 
   .billboard .eyes,
   .billboard .ear,
-  .billboard .mouth {
+  .billboard .circle {
     max-width: 100%;
     height: auto;
   }
