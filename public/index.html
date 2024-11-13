@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beyong the Divine</title>
+    <title>Beyond the Divine</title>
     <link rel="stylesheet" href="./css/styles.css" />
     <!-- <link rel="stylesheet" href="./styles/global.css" /> -->
 
@@ -15,6 +15,9 @@
         href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap"
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
+
 </head>
 
 <body>
@@ -27,12 +30,9 @@
         <figure class="media">
 
             <img class="lion" src="images/lion.png" alt="" />
-            <!-- <img class="skin" src="images/skin.png" alt="" /> -->
 
-            <!-- <img class="mouth" src="images/mouth.png" alt="" /> -->
-            <!-- <img class="ear" src="images/ear.png" alt="" /> -->
+
             <img class="eyes" src="images/eyes-color.png" alt="" />
-            <!-- <img class="rectangle" src="images/rectangle.png" alt="" /> -->
             <img class="circle" src="images/circle.png" alt="" />
 
         </figure>
@@ -41,14 +41,16 @@
     <div class="thank-you">
         <section class="Intro">
             <!-- <h1>Beyond the Divine</h1> -->
-            <h3>Abstract Reality, Time and the Logic of Change<br>
-                IE González</h3><br>
-            <h2>In appreciation to the “teal lion”, that inner voice always searching to make a dent in the
+            <h2>Abstract Reality, Time and the Logic of Change<br>
+            </h2>
+            <h3>IE González</h3><br>
+            <h3>In appreciation to the “teal lion”, that inner voice always searching to make a dent in the
                 universe. These original teal lion reflections are dedicated to my wife Marina and my four boys,
                 Javier,
                 Daniel,
-                Gabriel and Alejandro, for giving me happiness in this life and the opportunity to live beyond it.
-            </h2>
+                Gabriel and Alejandro, for giving me happiness in this life and the opportunity to live beyond
+                it.
+            </h3>
     </div>
     </div>
     </section>
@@ -57,10 +59,10 @@
     </div>
     <div class="group">
         <div class="questions">
-            <h2>On the Universe</h2>
+            <h3>On the Universe</h3>
 
-            <p>Select a topic on the subject of the Universe to find out what IE Gonzalez wants you to discover and
-                understand. </p>
+            <h4>Select a topic on the subject of the Universe to find out what IE Gonzalez wants you to discover and
+                understand. </h4>
             <!-- <label for="topic-appendix">Which topic are you interested in?</label> -->
             <select id="topic-appendix" name="dropdown">
                 <option value="logic">Logic</option>
@@ -80,28 +82,67 @@
 
 
         <div class="questions">
-            <h2>On Virtual Reality</h2>
-            <p>Enter a topic or question you want to ask on Virtual Reality to have IE Gonzalez' share his perspective.
-            </p>
+            <h3>On Virtual Reality</h3>
+            <h4>Enter a topic or question you want to ask on Virtual Reality to have IE Gonzalez' share his perspective.
+            </h4>
             <input id="topic-reality" type="text" placeholder="Enter a topic" />
             <!-- <div id="output-reality" ></div> -->
             <button id="get-reality">Ask IE Gonzalez</button>
         </div>
-        <div id="output-reality" class="gpt-response"></div>
+        <!-- <div id="markdown-input"> -->
 
+        <div id="output-reality" class="gpt-response"></div>
+        <!-- </div> -->
         <div class="questions">
-            <h2>Interview IE Gonzalez</h2>
-            <p>Enter a topic to create a virtual interview with IE Gonzalez. </p>
+            <h3>Interview IE Gonzalez</h3>
+            <h4>Enter a topic to create a virtual interview with IE Gonzalez. </h4>
+
             <input id="topic-interview" type="text" placeholder="Enter a topic" />
             <!-- <div id="output-interview"></div> -->
             <button id="get-interview">Start an Interview</button>
         </div>
         <div id="output-interview" class="gpt-response"></div>
+
     </div>
     <!-- <div id="cards" class="flex flex-wrap"></div>
         <script src="main.js"></script> -->
     </div>
 
+    <!-- <style>
+        output-reality h1,
+        h2,
+        h3 {
+            color: red;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+    </style> -->
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Initialize Showdown converter
+            var converter = new showdown.Converter();
+
+            // Get the markdown content
+            var markdownText = document.getElementById("markdown-input").innerHTML;
+
+            // Convert markdown to HTML
+            var htmlContent = converter.makeHtml(markdownText);
+
+            // Display the HTML content
+            document.getElementById("output-reality").innerHTML = htmlContent;
+        });
+    </script>
 
 
     <script>

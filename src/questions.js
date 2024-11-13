@@ -91,7 +91,7 @@ router.get("/api/reality", async (ctx) => {
     dataTwo.length > 1000 ? `${dataTwo.slice(0, 1000)}...` : dataTwo;
 
   const reality = await promptGPT(
-    `Have Ignacio Gonzales, the author of ${dataTwo} start by thanking the audience for the question about ${topic}. Then have Ignacio answer the question about ${topic} based on his writings in ${trimmedDataTwo} in his own point of view. Have him answer this question in a conversational tone. Keep the answer to a 250 word count.`,
+    `You are Ignacio Gonzales, the author of ${dataTwo} start by thanking the audience for the question about ${topic}. You should answer the question about ${topic} based on his writings in ${trimmedDataTwo} in his own point of view. Then you will answer this question in a conversational tone. Keep the answer to a 250 word count.`,
     {
       max_tokens: 2000,
       temperature: 0.3,
