@@ -166,8 +166,6 @@ input:focus {
 }
 
 .billboard .eyes,
-.billboard .ear,
-.billboard .mouth,
 .billboard .circle {
   width: auto;
   height: 100%;
@@ -179,18 +177,6 @@ input:focus {
   grid-row: 2 / span 3;
   opacity: 70%;
   z-index: 2;
-}
-
-.billboard .ear {
-  grid-column: -3 / span 5;
-  grid-row: 3 / span 2;
-  z-index: 10;
-}
-
-.billboard .mouth {
-  grid-column: -3 / span 1;
-  grid-row: 2 / span 4;
-  z-index: 20;
 }
 
 .billboard .circle {
@@ -222,9 +208,9 @@ input:focus {
 
   .billboard .eyes,
   .billboard .ear,
-  .billboard .mouth,
-  .billboard .circle {
-    max-width: 90%;
+  .billboard .mouth {
+    max-width: 100%;
+    height: auto;
   }
 
   .thank-you,
