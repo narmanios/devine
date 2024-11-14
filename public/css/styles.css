@@ -63,7 +63,9 @@ h3 {
 }
 
 .questions {
-  margin: 0 clamp(10px, 5%, 100px);
+  margin: 0 auto;
+  max-width: 800px; /* Limits the maximum width */
+
   padding: clamp(20px, 5%, 40px);
   display: flex;
   flex-direction: column;
@@ -75,16 +77,20 @@ select,
 input {
   font-family: inherit;
   font-size: 16px;
-  line-height: 1.75;
+  /* line-height: 1.75; */
   outline: none;
+  vertical-align: center;
 }
 
 button {
   color: white;
   background-color: #4a987b;
-  width: clamp(120px, 20%, 180px);
-  height: 32px;
+  width: clamp(120px, 60%, 180px);
+  height: auto;
   border: none;
+  border-radius: 2px;
+  padding: 8px;
+  vertical-align: center;
 }
 
 select {
@@ -117,7 +123,7 @@ input:focus {
   border: 1px solid #ccc;
   border-radius: 5px;
   margin: 0 auto 24px auto;
-  width: clamp(300px, 90%, 600px);
+  width: clamp(300px, 90%, 800px);
   white-space: pre-wrap;
 }
 
@@ -183,6 +189,10 @@ input:focus {
   grid-column: -8 / span 2;
   grid-row: 1 / span 4;
   z-index: 1;
+}
+
+#output-interview strong {
+  color: #24604a;
 }
 
 /* Mobile-Specific Adjustments */
@@ -284,8 +294,8 @@ input:focus {
 footer {
   background: #181818;
   color: #fcfcfc;
-  padding: clamp(4px, 0.4vw, 0.6vw);
-  padding-left: 7vw;
+  padding: clamp(4px, 2vw, 2vw);
+  padding-left: 4vw;
 }
 
 footer p {

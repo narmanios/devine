@@ -16,7 +16,8 @@
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
 
-    <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
 
 </head>
 
@@ -40,7 +41,6 @@
 
     <div class="thank-you">
         <section class="Intro">
-            <!-- <h1>Beyond the Divine</h1> -->
             <h2>Abstract Reality, Time and the Logic of Change<br>
             </h2>
             <h3>IE González</h3><br>
@@ -61,8 +61,8 @@
         <div class="questions">
             <h3>On the Universe</h3>
 
-            <h4>Select a topic on the subject of the Universe to find out what IE Gonzalez wants you to discover and
-                understand. </h4>
+            <h4>Select a topic about our Universe to discover and
+                understand Ignacio Gonzalez' perspective. </h4>
             <!-- <label for="topic-appendix">Which topic are you interested in?</label> -->
             <select id="topic-appendix" name="dropdown">
                 <option value="logic">Logic</option>
@@ -83,66 +83,42 @@
 
         <div class="questions">
             <h3>On Virtual Reality</h3>
-            <h4>Enter a topic or question you want to ask on Virtual Reality to have IE Gonzalez' share his perspective.
+            <h4>Ask a question or type a keyword you want to ask on Virtual Reality to have IE Gonzalez' share his
+                perspective.
             </h4>
             <input id="topic-reality" type="text" placeholder="Enter a topic" />
             <!-- <div id="output-reality" ></div> -->
             <button id="get-reality">Ask IE Gonzalez</button>
         </div>
-        <!-- <div id="markdown-input"> -->
+        <div id="markdown-input">
 
-        <div id="output-reality" class="gpt-response"></div>
-        <!-- </div> -->
-        <div class="questions">
-            <h3>Interview IE Gonzalez</h3>
-            <h4>Enter a topic to create a virtual interview with IE Gonzalez. </h4>
+            <div id="output-reality" class="gpt-response"></div>
+            <!-- </div> -->
 
-            <input id="topic-interview" type="text" placeholder="Enter a topic" />
-            <!-- <div id="output-interview"></div> -->
-            <button id="get-interview">Start an Interview</button>
+            <div class="questions">
+                <h3>Interview IE Gonzalez</h3>
+                <h4>Enter any topic to create a virtual interview with IE Gonzalez. </h4>
+
+                <input id="topic-interview" type="text" placeholder="Enter a topic" />
+                <!-- <div id="output-interview"></div> -->
+                <button id="get-interview">Start an Interview</button>
+            </div>
+            <div id="output-interview" class="gpt-response"></div>
+
         </div>
-        <div id="output-interview" class="gpt-response"></div>
 
-    </div>
-    <!-- <div id="cards" class="flex flex-wrap"></div>
+        <!-- <div id="content"></div> -->
+
+        <!-- <div id="cards" class="flex flex-wrap"></div>
         <script src="main.js"></script> -->
     </div>
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2024 Ignacio Gonzalez, Beyond the Divine, Published 2023 + OpenAI interpreations of the book. All
+                Rights Reserved.</p>
+        </div>
+    </footer>
 
-    <!-- <style>
-        output-reality h1,
-        h2,
-        h3 {
-            color: red;
-        }
-
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        code {
-            background-color: #f4f4f4;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-    </style> -->
-
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Initialize Showdown converter
-            var converter = new showdown.Converter();
-
-            // Get the markdown content
-            var markdownText = document.getElementById("markdown-input").innerHTML;
-
-            // Convert markdown to HTML
-            var htmlContent = converter.makeHtml(markdownText);
-
-            // Display the HTML content
-            document.getElementById("output-reality").innerHTML = htmlContent;
-        });
-    </script>
 
 
     <script>
@@ -162,7 +138,7 @@
             const joke = await response.text();
 
             // ?
-            document.querySelector("#output-appendix").textContent = joke;
+            document.querySelector("#output-appendix").innerHTML = marked.parse(joke);
         });
     </script>
     <script>
@@ -182,7 +158,7 @@
             const joke = await response.text();
 
             // ?
-            document.querySelector("#output-reality").textContent = joke;
+            document.querySelector("#output-reality").innerHTML = marked.parse(joke);
         });
     </script>
     <script>
@@ -201,8 +177,9 @@
             const response = await fetch(`/api/interview?topic=${topic}`);
             const joke = await response.text();
 
+
             // ?
-            document.querySelector("#output-interview").textContent = joke;
+            document.querySelector("#output-interview").innerHTML = marked.parse(joke);
         });
     </script>
 

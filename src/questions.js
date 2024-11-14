@@ -58,7 +58,7 @@ router.get("/api/appendix", async (ctx) => {
   try {
     // Use promptGPT to generate the response
     const appendix = await promptGPT(
-      `Have Ignacio Gonzales, the author of ${dataOne} start by thanking the audience for the question about ${value}. Then have Ignacio answer the question about ${value} based on his writings in ${trimmedData} in his own point of view. Have him answer this question in a conversational tone. Keep the answer to a 250 word count.`,
+      `You are Ignacio Gonzales, the author of ${dataOne} start by thanking the audience for the question about ${value}. Then you should answer the question about ${value} based on the writings in ${trimmedData} and the topic of the Universe in your own point of view. Answer this question in a conversational tone as if you are Ignacio Gonzalez. Keep the answer to a 250 word count. Bold ${value} in the text.`,
       {
         max_tokens: 1000,
         temperature: 0.3,
@@ -91,7 +91,7 @@ router.get("/api/reality", async (ctx) => {
     dataTwo.length > 1000 ? `${dataTwo.slice(0, 1000)}...` : dataTwo;
 
   const reality = await promptGPT(
-    `You are Ignacio Gonzales, the author of ${dataTwo} start by thanking the audience for the question about ${topic}. You should answer the question about ${topic} based on his writings in ${trimmedDataTwo} in his own point of view. Then you will answer this question in a conversational tone. Keep the answer to a 250 word count.`,
+    `You are Ignacio Gonzales, the author of ${dataTwo} start by thanking the audience for the question about ${topic}. You should answer the question about ${topic} based on his writings in ${trimmedDataTwo} based on the topic of Virtual Reality in your own point of view. Answer this question in a conversational tone. Keep the answer to a 250 word count. Bold ${topic} in the text.`,
     {
       max_tokens: 2000,
       temperature: 0.3,
@@ -109,7 +109,7 @@ router.get("/api/interview", async (ctx) => {
   console.log("someone made a request to /api/interview", topic);
 
   const interview = await promptGPT(
-    `Write a script of a moderator speaking. The moderator should speak to the audience and answer ${topic} based on ${dataThree} in relation to book Beyond the Divine by Ignacio Gonzalez. Write this in a conversational tone in a interview script format. The person answering the questions is Igancio.`,
+    `Write a script of a moderator speaking. The moderator should speak to the audience and answer ${topic} based on ${dataThree} in relation to book Beyond the Divine by Ignacio Gonzalez. Write this in a conversational tone in a interview script format. The person answering the questions is Igancio. Bold ${topic} in the script.`,
     {
       max_tokens: 2000,
       temperature: 0.3,
