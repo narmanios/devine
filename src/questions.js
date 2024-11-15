@@ -1,41 +1,15 @@
-// src/main_05_joke.js
 // Simple Deno backend with a static server and a custom route that
-// uses the OpenAI API to generate jokes.
-// ?
+// uses the OpenAI API to answers to questions based on RAG.
+
 import { Application, Router } from "https://deno.land/x/oak@v12.6.1/mod.ts";
 
-// ?
 import { createExitSignal, staticServer } from "./shared/server.ts";
 
-// ?
 import { promptGPT } from "./shared/openai.ts";
 
-// ?
 const app = new Application();
 const router = new Router();
 
-// ?
-// router.get("/api/artist", async (ctx) => {
-//   // ?
-
-//   const topic = ctx.request.url.searchParams.get("topic");
-
-//   // ?
-//   console.log("someone made a request to /api/artist", topic);
-//   console.log("someone made a request to /api/artist", value);
-
-//   // console.log(dataOne);
-
-//   const artist = await promptGPT(
-//     `Tell me about ${value} in relation to Jay Rodriguez saxophonist and wood winds musician.`,
-//     {
-//       max_tokens: 5000,
-//       temperature: 0.3,
-//     }
-//   );
-
-//   ctx.response.body = artist;
-// });
 const dataOne = await Deno.readTextFile(`public/text/appendix.txt`);
 const dataTwo = await Deno.readTextFile(`public/text/prologue.txt`);
 const dataThree = await Deno.readTextFile(`public/text/full-text.txt`);

@@ -50,7 +50,14 @@ h3 {
   font-size: clamp(1.4rem, 4vw, 6vw);
   margin-bottom: 16px;
 }
-
+h5 {
+  font-size: clamp(0.4rem, 4vw, 1.25vw);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+/* h6 {
+  margin-top: 2px;
+} */
 /* General Styles */
 .thank-you {
   padding: clamp(20px, 5vw, 60px);
@@ -92,6 +99,17 @@ button {
   padding: 8px;
   vertical-align: center;
 }
+.controls-button {
+  font-size: 12px;
+  font-weight: bold; /* Optional: Highlight specific button */
+  color: #4a987b;
+  background-color: #ffffff;
+  border: 1px solid #4a987b; /* Ensure visible borders */
+  border-radius: 6px;
+  padding: 6px 12px;
+  width: auto; /* Allow flexibility */
+  margin-bottom: 12px;
+}
 
 select {
   border: 2px solid rgb(36, 36, 36);
@@ -122,7 +140,7 @@ input:focus {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin: 0 auto 24px auto;
+  margin: 0 auto 12px auto;
   width: clamp(300px, 90%, 800px);
   white-space: pre-wrap;
 }

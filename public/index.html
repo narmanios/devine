@@ -76,45 +76,61 @@
 
             <!-- Button -->
             <button id="get-appendix">Ask IE Gonzalez</button>
+            <div id="markdown-input"></div>
+            <h6>Note: this is a Open AI interprepation of the book that the model has been trained on</h6>
+            <!-- Output -->
+            <div id="output-appendix" class="gpt-response"></div>
+
         </div>
-        <!-- Output -->
-        <div id="output-appendix" class="gpt-response"></div>
-
-
         <div class="questions">
             <h3>On Virtual Reality</h3>
-            <h4>Ask a question or type a keyword you want to ask on Virtual Reality to have IE Gonzalez' share his
+            <h4>Ask a question or type a keyword you want to ask on Virtual Reality to have IE Gonzalez' share
+                his
                 perspective.
             </h4>
-            <input id="topic-reality" type="text" placeholder="Enter a topic" />
+            <input id="topic-reality" type="text" placeholder="Enter a topic or keyword" />
             <!-- <div id="output-reality" ></div> -->
             <button id="get-reality">Ask IE Gonzalez</button>
-        </div>
-        <div id="markdown-input">
-
-            <div id="output-reality" class="gpt-response"></div>
             <!-- </div> -->
-
-            <div class="questions">
-                <h3>Interview IE Gonzalez</h3>
-                <h4>Enter any topic to create a virtual interview with IE Gonzalez. </h4>
-
-                <input id="topic-interview" type="text" placeholder="Enter a topic" />
-                <!-- <div id="output-interview"></div> -->
-                <button id="get-interview">Start an Interview</button>
-            </div>
-            <div id="output-interview" class="gpt-response"></div>
-
+            <div id="markdown-input"></div>
+            <h6>Note: this is a Open AI interprepation of the book that the model has been
+                trained on. </h6>
+            <div id="output-reality" class="gpt-response"></div>
         </div>
 
-        <!-- <div id="content"></div> -->
+        <div class="questions">
+            <h3>Interview IE Gonzalez</h3>
+            <h4>Enter any topic to create a virtual interview with IE Gonzalez. </h4>
 
-        <!-- <div id="cards" class="flex flex-wrap"></div>
+            <input id="topic-interview" type="text" placeholder="Enter a topic" />
+            <!-- <div id="output-interview"></div> -->
+            <button id="get-interview">Start an Interview</button>
+
+            <div class="controls">
+                <h5>Audio</h5>
+
+                <button id="pause" class="controls-button">Pause</button>
+                <button id="resume" class="controls-button">Resume</button>
+
+                <h6>Note: this is a simulated voice and Open AI interprepation of the book that the model has
+                    been
+                    trained on. </h6>
+
+            </div>
+        </div>
+        <!-- </div> -->
+        <div id="output-interview" class="gpt-response"></div>
+
+    </div>
+
+    <!-- <div id="content"></div> -->
+
+    <!-- <div id="cards" class="flex flex-wrap"></div>
         <script src="main.js"></script> -->
     </div>
     <footer class="footer">
         <div class="footer-bottom">
-            <p>&copy; 2024 Ignacio Gonzalez, Beyond the Divine, Published 2023 + OpenAI interpreations of the book. All
+            <p>&copy; 2024 Ignacio Gonzalez, Beyond the Divine, Published 2023 + OpenAI interpretations of the book. All
                 Rights Reserved.</p>
         </div>
     </footer>
@@ -164,10 +180,16 @@
     <script>
         // ?
         const getInterviewButton = document.querySelector("#get-interview");
+        const getPauseButton = document.querySelector("#pause");
+        const getResumeButton = document.querySelector("#resume");
 
-        // ?
+
+
         getInterviewButton.addEventListener("click", async () => {
-            // ?
+
+            const synth = window.speechSynthesis;
+            const voices = speechSynthesis.getVoices();
+
             document.querySelector("#output-interview").textContent = "loading...";
 
             // ?
@@ -180,10 +202,25 @@
 
             // ?
             document.querySelector("#output-interview").innerHTML = marked.parse(joke);
+
+            const utterThis = new SpeechSynthesisUtterance(joke);
+            utterThis.voice = voices[1];
+
+            synth.speak(utterThis);
+        });
+
+        getPauseButton.addEventListener("click", async () => {
+            const synthStop = window.speechSynthesis;
+
+            synthStop.pause();
+        });
+
+        getResumeButton.addEventListener("click", async () => {
+            const synthResume = window.speechSynthesis;
+
+            synthResume.resume();
         });
     </script>
-
-
 
 </body>
 
