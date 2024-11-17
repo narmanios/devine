@@ -50,15 +50,20 @@ h3 {
   font-size: clamp(1.4rem, 4vw, 6vw);
   margin-bottom: 16px;
 }
+h4 {
+  font-size: clamp(1.2rem, 4vw, 2vw);
+  margin-bottom: 8px;
+}
 h5 {
-  font-size: clamp(0.4rem, 4vw, 1.25vw);
+  font-size: clamp(1rem, 4vw, 1vw);
   font-weight: 600;
   margin-bottom: 8px;
 }
-/* h6 {
-  margin-top: 2px;
-} */
-/* General Styles */
+
+h6 {
+  font-size: clamp(1rem, 4vw, 1vw);
+  margin-bottom: 8px;
+}
 .thank-you {
   padding: clamp(20px, 5vw, 60px);
   background-color: #87d5b8;
@@ -71,7 +76,7 @@ h5 {
 
 .questions {
   margin: 0 auto;
-  max-width: 800px; /* Limits the maximum width */
+  max-width: 800px;
 
   padding: clamp(20px, 5%, 40px);
   display: flex;
@@ -83,7 +88,7 @@ button,
 select,
 input {
   font-family: inherit;
-  font-size: 16px;
+  font-size: 20px;
   /* line-height: 1.75; */
   outline: none;
   vertical-align: center;
@@ -101,13 +106,13 @@ button {
 }
 .controls-button {
   font-size: 12px;
-  font-weight: bold; /* Optional: Highlight specific button */
+  font-weight: bold;
   color: #4a987b;
   background-color: #ffffff;
-  border: 1px solid #4a987b; /* Ensure visible borders */
+  border: 1px solid #4a987b;
   border-radius: 6px;
   padding: 6px 12px;
-  width: auto; /* Allow flexibility */
+  width: auto;
   margin-bottom: 12px;
 }
 
@@ -150,7 +155,7 @@ input:focus {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   padding: 8vh 7vw;
-  position: relative; /* Establish a stacking context */
+  position: relative;
 }
 
 .billboard .container {
@@ -158,26 +163,26 @@ input:focus {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative; /* Required for stacking */
-  z-index: 20; /* Higher than the eyes */
+  position: relative;
+  z-index: 20;
 }
 
 .billboard h1 {
-  position: relative; /* Allow z-index to work */
-  z-index: 30; /* Place on top of the eyes */
-  color: rgba(255, 255, 255, 0.9); /* Ensure visibility */
+  position: relative;
+  z-index: 30;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .billboard .eyes {
-  grid-column: 1 / span 5; /* Expand to align under the text */
-  grid-row: 1 / -1; /* Cover the full height of the section */
-  position: absolute; /* Absolute to control layering */
+  grid-column: 1 / span 5;
+  grid-row: 1 / -1;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.7; /* Make it blend subtly */
-  z-index: 10; /* Place behind the text */
+  opacity: 0.7;
+  z-index: 10;
 }
 
 .billboard figure {
