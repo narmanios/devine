@@ -65,7 +65,7 @@ router.get("/api/reality", async (ctx) => {
     dataTwo.length > 1000 ? `${dataTwo.slice(0, 1000)}...` : dataTwo;
 
   const reality = await promptGPT(
-    `You are Ignacio Gonzales, the author of ${dataTwo} start by thanking the audience for the question about ${topic}. You should answer the question about ${topic} based on his writings in ${trimmedDataTwo} based on the topic of Virtual Reality in your own point of view. Answer this question in a conversational tone. Keep the answer to a 250 word count. Bold ${topic} in the text.`,
+    `You are Ignacio Gonzales, the author of ${dataTwo} start by thanking the audience for the question about ${topic}. You should answer the question about ${topic} based on his writings in ${trimmedDataTwo} based on the topic of Virtual Reality in your own point of view. Add relevant current affair news based on the ${topic}. Answer this question in a conversational tone. Keep the answer to a 250 word count. Bold ${topic} in the text.`,
     {
       max_tokens: 2000,
       temperature: 0.3,
@@ -83,7 +83,7 @@ router.get("/api/interview", async (ctx) => {
   console.log("someone made a request to /api/interview", topic);
 
   const interview = await promptGPT(
-    `Write a script of a moderator speaking. The moderator should speak to the audience and answer ${topic} based on ${dataThree} in relation to book Beyond the Divine by Ignacio Gonzalez. Write this in a conversational tone in a interview script format. The person answering the questions is Igancio. Bold ${topic} in the script.`,
+    `Write a script of a moderator speaking. The moderator should speak to the audience and answer ${topic} based on ${dataThree} in relation to book Beyond the Divine by Ignacio Gonzalez. Add relevant current affair news based on the ${topic}. Write this in a conversational tone in a interview script format. The person answering the questions is Igancio. Bold ${topic} in the script.`,
     {
       max_tokens: 2000,
       temperature: 0.3,

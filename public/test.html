@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+
+    import { createRequire } from 'module';
+    const require = createRequire(import.meta.url);
+
+    // import { ElevenLabsClient } from "elevenlabs";
+    // import { createWriteStream } from "fs";
+
+    // import { v4 as uuid } from "uuid";
+
+    // import * as dotenv from "dotenv";
+
+    // dotenv.config();
+
+    // const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
+
+    // const client = new ElevenLabsClient({
+    //     apiKey: ELEVENLABS_API_KEY,
+    // });
+
+    const ElevenLabs = require("elevenlabs-node");
+
+    const voice = new ElevenLabs(
+        {
+            apiKey: "sk_a3d2661edcb343d77fe2d24ad629348cc318827ad13dec8c", // Your API key from Elevenlabs
+            voiceId: "pNInz6obpgDQGcFmaJgB",             // A Voice ID from Elevenlabs
+        }
+    );
+
+</script>
