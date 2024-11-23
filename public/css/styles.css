@@ -119,15 +119,16 @@ button {
 select {
   border: 2px solid rgb(36, 36, 36);
   width: 100%;
-  max-width: 250px;
+  max-width: 450px;
+  height: 48px;
   padding-left: 10px;
-  height: 32px;
 }
 
 input {
   border: 2px solid rgb(148, 148, 148);
   width: 100%;
-  max-width: 350px;
+  max-width: 450px;
+  height: 48px;
   padding-left: 10px;
 }
 
