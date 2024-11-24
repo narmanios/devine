@@ -64,6 +64,93 @@ h6 {
   font-size: clamp(1rem, 4vw, 1vw);
   margin-bottom: 8px;
 }
+p {
+  margin: 10px 0;
+  line-height: 1.8;
+  font-size: 1.25em;
+  /* text-align: justify; */
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.nav-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #f4f4f4;
+  border-left: 1px solid #ddd;
+  padding: 1em;
+}
+
+.nav-container a {
+  display: block;
+  margin: 0.5em 0;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.nav-container a:hover {
+  color: #007bff;
+}
+
+.content {
+  margin-right: 220px; /* Space for the navigation */
+  padding: 1em;
+}
+
+.billboard h4,
+.billboard h5 {
+  margin-top: 2em;
+}
+
+/* Lists */
+ul {
+  margin: 10px 0 20px 20px;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* Blockquotes */
+blockquote {
+  margin: 20px 0;
+  padding: 15px 20px;
+  background: #f9f9f9;
+  border-left: 5px solid #aaa;
+  font-style: italic;
+  color: #666;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+/* Links */
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Code Blocks */
+code {
+  font-family: "Courier New", Courier, monospace;
+  background: #f4f4f4;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
 .thank-you {
   padding: clamp(20px, 5vw, 60px);
   background-color: #87d5b8;
@@ -94,6 +181,12 @@ input {
   vertical-align: center;
 }
 
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 450px;
+}
+
 button {
   color: white;
   background-color: #4a987b;
@@ -114,6 +207,21 @@ button {
   padding: 6px 12px;
   width: auto;
   margin-bottom: 12px;
+}
+
+.read-perspective {
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #000000;
+  border: 1px solid #4a987b;
+  border-radius: 6px;
+  padding: 6px 12px;
+  width: auto;
+  margin-bottom: 12px;
+  margin-top: 48px;
+}
+.read-perspective a {
+  color: #ffffff;
 }
 
 select {
@@ -219,6 +327,55 @@ input:focus {
   color: #24604a;
 }
 
+.sticky-book-cover-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  z-index: 1000;
+  text-align: center;
+}
+
+.sticky-book-cover {
+  width: 100%;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.sticky-book-cover-two {
+  width: 100%;
+  border: 2px solid #eee;
+  box-shadow: 0 4px 6px rgba(170, 170, 170, 0.601);
+}
+
+.sticky-book-cover-text {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2px 5px;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 3px;
+  color: #000;
+  pointer-events: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.sticky-book-cover-text-two {
+  position: absolute;
+  top: 5px;
+  left: 20%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2px 5px;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 3px;
+  color: #000;
+  pointer-events: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 /* Mobile-Specific Adjustments */
 @media (max-width: 767px) {
   .billboard {
@@ -263,6 +420,25 @@ input:focus {
   select {
     width: 100%;
   }
+
+  .nav-container, /* Sticky navigation */
+  .sticky-book-cover-container {
+    /* Sticky image */
+    display: none; /* Completely hide these elements */
+  }
+  /* Adjust content to use full width */
+  .content {
+    margin: 0; /* Remove any margins */
+    padding: 0; /* Optional: Adjust padding as needed */
+    width: 100%; /* Ensure it takes full width */
+  }
+
+  .book-image {
+    max-width: 60%; /* Adjust width for scaling */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px auto; /* Center the image */
+    display: block; /* Ensure proper centering in block layout */
+  }
 }
 
 /* Section Styles */
@@ -292,8 +468,8 @@ input:focus {
   color: #fcfcfc;
 }
 
-.coffee-bg {
-  background: #664b44;
+.black-bg {
+  background: #000000;
   color: #fcfcfc;
 }
 
