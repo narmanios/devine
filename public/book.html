@@ -1547,12 +1547,28 @@
 
             </div>
 
-            <div class="sticky-book-cover-container">
+            <div id="sticky-book-cover-container" class="sticky-book-cover-container">
                 <a href="index.html"><img class="sticky-book-cover-two" src="images/eyes-color.png"
                         alt="Beyond the Divine Book Cover">
                     <div class="sticky-book-cover-text-two">Back</div>
                 </a>
             </div>
+
+
+            <script>      document.addEventListener("DOMContentLoaded", () => {
+                    const stickyContainer = document.getElementById("sticky-book-cover-container");
+                    const threshold = 20; // Scroll position in pixels to trigger visibility
+                    let hasAppeared = false; // Tracks if the container has already appeared
+
+                    document.addEventListener("scroll", () => {
+                        if (!hasAppeared && window.scrollY > threshold) {
+                            stickyContainer.classList.add("sticky-visible");
+                            hasAppeared = true; // Prevent further hiding
+                        }
+                    });
+                });
+            </script>
+            </script>
 
 </body>
 

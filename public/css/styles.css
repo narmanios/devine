@@ -68,7 +68,7 @@ p {
   margin: 10px 0;
   line-height: 1.8;
   font-size: 1.25em;
-  /* text-align: justify; */
+  text-align: left;
 }
 html {
   scroll-behavior: smooth;
@@ -327,13 +327,36 @@ input:focus {
   color: #24604a;
 }
 
+/* Default styling */
+/* #sticky-container {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  transition: position 0.3s ease, top 0.3s ease;
+} */
+
+/* Sticky state */
+/* #sticky-container.sticky {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  bottom: auto;
+} */
+
 .sticky-book-cover-container {
   position: fixed;
   bottom: 20px;
   right: 20px;
   width: 100px;
   z-index: 1000;
+  opacity: 0;
+  pointer-events: none; /* Prevent interaction when hidden */
+  transition: opacity 0.3s ease; /* Smooth transition for showing/hiding */
   text-align: center;
+}
+.sticky-visible {
+  opacity: 1;
+  pointer-events: auto; /* Enable interaction when visible */
 }
 
 .sticky-book-cover {

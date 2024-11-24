@@ -137,7 +137,7 @@
 
 
 
-    <div class="sticky-book-cover-container">
+    <div id="sticky-book-cover-container" class="sticky-book-cover-container">
         <a href="book.html"><img class="sticky-book-cover" src="images/book-cover.jpg"
                 alt="Beyond the Divine Book Cover">
             <div class="sticky-book-cover-text">Read the Book</div>
@@ -161,7 +161,31 @@
         </div>
     </footer>
 
+    <script>
+        // document.addEventListener("scroll", () => {
+        //     const stickyContainer = document.getElementById("sticky-container");
+        //     const triggerPosition = 1300; // Change to the scroll position you want
 
+        //     if (window.scrollY > triggerPosition) {
+        //         stickyContainer.classList.add("sticky");
+        //     } else {
+        //         stickyContainer.classList.remove("sticky");
+        //     }
+        // });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const stickyContainer = document.getElementById("sticky-book-cover-container");
+            const threshold = 20; // Scroll position in pixels to trigger visibility
+            let hasAppeared = false; // Tracks if the container has already appeared
+
+            document.addEventListener("scroll", () => {
+                if (!hasAppeared && window.scrollY > threshold) {
+                    stickyContainer.classList.add("sticky-visible");
+                    hasAppeared = true; // Prevent further hiding
+                }
+            });
+        });
+    </script>
 
     <script>
         // ?
