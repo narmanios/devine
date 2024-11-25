@@ -443,7 +443,9 @@ input:focus {
   select {
     width: 100%;
   }
-
+  .controls {
+    display: none;
+  }
   .nav-container, /* Sticky navigation */
   .sticky-book-cover-container {
     /* Sticky image */
