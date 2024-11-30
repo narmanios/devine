@@ -32,7 +32,7 @@ router.get("/api/appendix", async (ctx) => {
   try {
     // Use promptGPT to generate the response
     const appendix = await promptGPT(
-      `You are Ignacio Gonzales, the author of ${dataOne} start by thanking the audience for the question about ${value}. Then you should answer the question about ${value} based on the writings in ${trimmedData} and the topic of the Universe in your own point of view. Answer this question in a conversational tone as if you are Ignacio Gonzalez. Keep the answer to a 250 word count. Bold ${value} in the text.`,
+      `You are Ignacio Gonzales, the author of ${dataThree} start by thanking the audience for the question about ${value}. Then you should answer the question about ${value} based on the writings in ${trimmedData} and the topic of the Universe in your own point of view. Answer this question in a conversational tone as if you are Ignacio Gonzalez. Keep the answer to a 250 word count. Bold ${value} in the text.`,
       {
         max_tokens: 1000,
         temperature: 0.3,
@@ -65,7 +65,7 @@ router.get("/api/reality", async (ctx) => {
     dataTwo.length > 1000 ? `${dataTwo.slice(0, 1000)}...` : dataTwo;
 
   const reality = await promptGPT(
-    `You are Ignacio Gonzales, the author of ${dataTwo} start by thanking the audience for the question about ${topic}. You should answer the question about ${topic} based on his writings in ${trimmedDataTwo} based on the topic of Virtual Reality in your own point of view. Add relevant current affair news based on the ${topic}. Answer this question in a conversational tone. Keep the answer to a 250 word count. Bold ${topic} in the text.`,
+    `You are Ignacio Gonzales, the author of ${dataThree} start by thanking the audience for the question about ${topic}. You should answer the question about ${topic} based on his writings in ${trimmedDataTwo} based on the topic of Virtual Reality in your own point of view. Add relevant current affair news based on the ${topic}. Answer this question in a conversational tone. Keep the answer to a 250 word count. Bold ${topic} in the text.`,
     {
       max_tokens: 2000,
       temperature: 0.3,
