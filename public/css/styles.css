@@ -208,7 +208,15 @@ button {
   width: auto;
   margin-bottom: 12px;
 }
-
+/* select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100px;
+  height: 17px;
+  background: url(images/chevron.svg) no-repeat right black;
+  position: relative;
+} */
 .read-perspective {
   font-size: 12px;
   font-weight: bold;
