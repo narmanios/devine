@@ -133,14 +133,14 @@ blockquote p {
 }
 
 /* Links */
-a {
+/* a {
   color: #0066cc;
   text-decoration: none;
-}
+} */
 
-a:hover {
+/* a:hover {
   text-decoration: underline;
-}
+} */
 
 /* Code Blocks */
 code {
@@ -220,8 +220,9 @@ button {
 .read-perspective {
   font-size: 12px;
   font-weight: bold;
-  background-color: #000000;
-  border: 1px solid #4a987b;
+  color: #000;
+  background-color: #ffffff;
+  border: 1px solid #000000;
   border-radius: 6px;
   padding: 6px 12px;
   width: auto;
@@ -229,7 +230,16 @@ button {
   margin-top: 48px;
 }
 .read-perspective a {
-  color: #ffffff;
+  color: #000000;
+}
+
+.read-perspective a:hover {
+  color: #fff;
+}
+
+.read-perspective:hover {
+  color: #fff;
+  background-color: #4a987b;
 }
 
 select {
@@ -249,7 +259,7 @@ input {
 }
 
 input:focus {
-  border: 4px solid blue;
+  border: 4px solid #4a987b;
 }
 
 /* Response Box */
@@ -335,25 +345,51 @@ input:focus {
   color: #24604a;
 }
 
-/* Default styling */
-/* #sticky-container {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  transition: position 0.3s ease, top 0.3s ease;
-} */
-
-/* Sticky state */
-/* #sticky-container.sticky {
+.buy-container-text {
   position: fixed;
-  top: 20px;
+  bottom: 0px;
   right: 20px;
-  bottom: auto;
-} */
+  min-width: 100px;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  /* background-color: rgba(255, 255, 255, 0.9); */
+  padding: 2px 5px;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 3px;
+  color: #f85b00;
+}
+
+.buy-container-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.buy-container-text a {
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #000000;
+  padding: 10px 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.buy-container-text a:hover {
+  background-color: #4a987b;
+  color: #fff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
 
 .sticky-book-cover-container {
   position: fixed;
-  bottom: 20px;
+  bottom: 60px;
   right: 20px;
   width: 100px;
   z-index: 1000;
@@ -372,11 +408,6 @@ input:focus {
   border: 2px solid #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.sticky-book-cover-two {
-  width: 100%;
-  border: 2px solid #eee;
-  box-shadow: 0 4px 6px rgba(170, 170, 170, 0.601);
-}
 
 .sticky-book-cover-text {
   position: absolute;
@@ -392,6 +423,24 @@ input:focus {
   pointer-events: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.sticky-visible:hover .sticky-book-cover {
+  border-color: #4a987b; /* Example hover effect */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sticky-visible:hover .sticky-book-cover-text {
+  background-color: #4a987b; /* Example hover effect */
+  color: #fff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sticky-book-cover-two {
+  width: 100%;
+  border: 2px solid #eee;
+  box-shadow: 0 4px 6px rgba(170, 170, 170, 0.601);
+}
+
 .sticky-book-cover-text-two {
   position: absolute;
   top: 5px;
@@ -403,8 +452,14 @@ input:focus {
   font-weight: bold;
   border-radius: 3px;
   color: #000;
-  pointer-events: none;
+  pointer-events: auto;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sticky-visible:hover .read-perspective .sticky-book-cover-text-two {
+  background-color: #4a987b; /* Example hover effect */
+  color: #fff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Mobile-Specific Adjustments */

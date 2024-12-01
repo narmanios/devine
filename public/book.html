@@ -1615,6 +1615,7 @@
                     <button class="read-perspective"><a href="index.html">Back to Renderings</a></button>
                 </div>
 
+
             </div>
 
             <div id="sticky-book-cover-container" class="sticky-book-cover-container">
@@ -1622,6 +1623,10 @@
                         alt="Beyond the Divine Book Cover">
                     <div class="sticky-book-cover-text-two">Back</div>
                 </a>
+            </div>
+
+            <div id="buy-container-text" class="buy-container-text">
+                <a href="https://a.co/d/8hsEBAf">Buy the Book</a>
             </div>
 
 
@@ -1638,7 +1643,23 @@
                     });
                 });
             </script>
+
+            <script>
+
+                document.addEventListener("DOMContentLoaded", () => {
+                    const buyContainer = document.getElementById("buy-container-text");
+                    const threshold = 20;
+
+                    document.addEventListener("scroll", () => {
+                        if (window.scrollY > threshold) {
+                            buyContainer.classList.add("buy-container-visible");
+                        }
+                    });
+                });
+
+
             </script>
+
 
 </body>
 

@@ -145,6 +145,12 @@
         </a>
     </div>
 
+    <div id="buy-container-text" class="buy-container-text">
+        <a href="https://a.co/d/8hsEBAf">Buy the Book</a>
+    </div>
+
+
+
 
 
 
@@ -163,16 +169,6 @@
     </footer>
 
     <script>
-        // document.addEventListener("scroll", () => {
-        //     const stickyContainer = document.getElementById("sticky-container");
-        //     const triggerPosition = 1300; // Change to the scroll position you want
-
-        //     if (window.scrollY > triggerPosition) {
-        //         stickyContainer.classList.add("sticky");
-        //     } else {
-        //         stickyContainer.classList.remove("sticky");
-        //     }
-        // });
 
         document.addEventListener("DOMContentLoaded", () => {
             const stickyContainer = document.getElementById("sticky-book-cover-container");
@@ -186,6 +182,24 @@
                 }
             });
         });
+    </script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const buyContainer = document.getElementById("buy-container-text");
+            const threshold = 20;
+
+            document.addEventListener("scroll", () => {
+                if (window.scrollY > threshold) {
+                    buyContainer.classList.add("buy-container-visible");
+                }
+            });
+        });
+
+
+    </script>
+
+
     </script>
 
     <script>
