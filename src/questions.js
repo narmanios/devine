@@ -10,9 +10,9 @@ import { promptGPT } from "./shared/openai.ts";
 const app = new Application();
 const router = new Router();
 
-const dataOne = await Deno.readTextFile(`public/text/appendix.txt`);
-const dataTwo = await Deno.readTextFile(`public/text/prologue.txt`);
-const dataThree = await Deno.readTextFile(`public/text/full-text.txt`);
+const dataOne = await Deno.readTextFile(`docs/text/appendix.txt`);
+const dataTwo = await Deno.readTextFile(`docs/text/prologue.txt`);
+const dataThree = await Deno.readTextFile(`docs/text/full-text.txt`);
 
 router.get("/api/appendix", async (ctx) => {
   // Get query parameter from the request

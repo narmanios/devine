@@ -63,7 +63,7 @@ router.get("/api/festival", async (ctx) => {
   console.log("Topic:", topic);
 
   // Safely read the file
-  const dataOne = await readFileSafe("public/text/prologue.txt");
+  const dataOne = await readFileSafe("docs/text/prologue.txt");
   if (!dataOne) {
     ctx.response.status = 404;
     ctx.response.body = { error: "File not found or cannot be read." };
