@@ -1,0 +1,9 @@
+{
+  "name": "devine",
+  "private": true,
+  "type": "module",
+  "description": "Beyond the Divine — static site plus serverless OpenAI routes.",
+  "dependencies": {
+    "openai": "^4.68.2"
+  }
+}

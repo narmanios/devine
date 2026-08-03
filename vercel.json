@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "outputDirectory": "docs",
+  "functions": {
+    "api/*.js": {
+      "includeFiles": "docs/text/**"
+    }
+  }
+}
